@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --neural-purple: #7c3aed;
+    --neural-blue: #2563eb;
+    --neural-cyan: #06b6d4;
+    --neural-green: #10b981;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-5 py-2.5 rounded-xl font-medium inline-flex items-center justify-center tracking-tight transition-all duration-200;
+  }
+  .btn-primary {
+    @apply bg-gradient-to-r from-violet-600 to-cyan-500 text-white hover:opacity-90 shadow-lg shadow-violet-500/25;
+  }
+  .btn-outline {
+    @apply border border-white/20 text-white/80 hover:border-white/40 hover:text-white bg-white/5;
+  }
+  .btn-text {
+    @apply text-white/70 bg-transparent hover:text-white;
+  }
+  .tag {
+    @apply text-xs font-semibold uppercase tracking-widest inline-flex border border-violet-500/30 bg-violet-500/10 text-violet-400 px-3 py-1 rounded-full;
+  }
+  .section-title {
+    @apply text-center text-3xl md:text-[54px] md:leading-[60px] font-bold tracking-tighter bg-gradient-to-b from-white to-white/50 text-transparent bg-clip-text;
+  }
+  .section-description {
+    @apply text-center text-lg leading-relaxed tracking-tight text-white/50;
+  }
+  .section-heading {
+    @apply max-w-[640px] mx-auto;
+  }
+  .card {
+    @apply p-6 border border-white/10 bg-white/5 backdrop-blur-sm rounded-2xl;
+  }
+  .card-hover {
+    @apply hover:border-violet-500/30 hover:bg-white/8 transition-all duration-300;
+  }
+  .glow-text {
+    @apply bg-gradient-to-r from-violet-400 via-cyan-400 to-violet-400 text-transparent bg-clip-text;
+  }
+  .stat-number {
+    @apply text-4xl font-bold tracking-tighter bg-gradient-to-b from-white to-white/60 text-transparent bg-clip-text;
+  }
+}
