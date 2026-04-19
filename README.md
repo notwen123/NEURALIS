@@ -87,6 +87,44 @@ Everything runs at **100 ms block times** with zero gas friction for users.
 
 **Demo video** shows the entire flow from iPhone lock screen to battle victory in under 30 seconds.
 
+## User side — MetaMask only (EVM)
+
+    The user only ever touches MetaMask:
+
+    Connect wallet → MetaMask
+    Deposit USDC → MetaMask signs the EVM tx → VaultManager.sol
+    Withdraw → MetaMask signs → VaultManager.sol
+    That's it. The user never touches MoveVM directly.
+
+## Agent side — keeper wallet (automated, no user interaction)
+
+    Everything on MoveVM is done by the keeper wallet (the AI agent's server-side wallet), not the user:
+
+    Agent cycle runs (every 30 min, cron job):
+    1. Claude recommends rebalance
+    2. Keeper signs → KeeperExecutor.sol (EVM tx)        ← keeper wallet, EVM
+    3. Keeper signs → ProgrammableIntents.move (Cosmos tx) ← keeper wallet, MoveVM
+    4. Keeper signs → LaborBadge.move mint (Cosmos tx)    ← keeper wallet, MoveVM
+
+    The keeper wallet has two keys:
+    An EVM private key (KEEPER_PRIVATE_KEY) for signing EVM rebalances
+    A Cosmos/Move mnemonic (KEEPER_MNEMONIC) for signing MoveVM transactions
+    Both are on the server, never in the user's browser.
+
+So the full picture is:
+
+User (MetaMask)          Keeper Agent (server)
+      │                         │
+      │ deposit USDC             │
+      ▼                         │
+VaultManager.sol (EVM)          │
+                                │ every 30 min
+                                ▼
+                    KeeperExecutor.sol (EVM)
+                    ProgrammableIntents.move
+                    LaborBadge.move
+
+
 ---
 
 ## Why NEURALIS Wins 1st Place
