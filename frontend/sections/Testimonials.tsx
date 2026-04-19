@@ -7,7 +7,14 @@ import { AnimatedDivider } from "./Hero";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
-const testimonials = [
+interface Testimonial {
+  text: string;
+  imageSrc: string;
+  name: string;
+  username: string;
+}
+
+const testimonials: Testimonial[] = [
   { text: "As a seasoned designer always on the lookout for innovative tools, Framer.com instantly grabbed my attention.", imageSrc: "/landing/avatar-1.png", name: "Cool Dude", username: "@coolDude" },
   { text: "Our team's productivity has skyrocketed since we started using this tool.", imageSrc: "/landing/avatar-2.png", name: "Hermione Granger", username: "@hermione" },
   { text: "This app has completely transformed how I manage my projects and deadlines.", imageSrc: "/landing/avatar-3.png", name: "Jasmine", username: "@jasmine" },
@@ -23,7 +30,7 @@ const firstColumn  = testimonials.slice(0, 3);
 const secondColumn = testimonials.slice(3, 6);
 const thirdColumn  = testimonials.slice(6, 9);
 
-const TestimonialsColumn = ({ className, testimonials, duration = 10 }: { className?: string; testimonials: typeof testimonials; duration?: number }) => (
+const TestimonialsColumn = ({ className, testimonials, duration = 10 }: { className?: string; testimonials: Testimonial[]; duration?: number }) => (
   <div className={className}>
     <motion.div
       animate={{ translateY: "-50%" }}

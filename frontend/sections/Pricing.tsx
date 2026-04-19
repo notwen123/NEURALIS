@@ -7,19 +7,19 @@ const EASE = [0.22, 1, 0.36, 1] as const;
 
 const pricingTiers = [
   {
-    title: "Free", monthlyPrice: 0, buttonText: "Start building",
+    title: "Free", monthlyPrice: "0", buttonText: "Connect Wallet",
     popular: false, inverse: false,
-    features: ["1 YieldMind Agent instance", "Standard RPC access (Rate-limited)", "10,000 compute units / mo", "Community Discord support", "Testnet deployment"],
+    features: ["Zero Gas Fees (Invisible UX)", "100ms OPinit block times", "24-hour Auto-Signing (No pop-ups)", "Social Login (Email/Google)", "Cross-chain Liquidity Vaults"],
   },
   {
-    title: "Pro", monthlyPrice: 9, buttonText: "Deploy Vault",
+    title: "Pro", monthlyPrice: "0.1% fee", buttonText: "Mint Labor Badge",
     popular: true, inverse: true,
-    features: ["Unlimited AI Agent instances", "Zero-latency smart contract execution", "Automated portfolio rebalancing", "Priority transaction sequencing", "24/7 Engineering SLA"],
+    features: ["Autonomous yield harvesting", "Interwoven Bridge routing", "MoveVM Soulbound Labor Badges", "Earn Neural Credits from work", "Agent Arena PvP access"],
   },
   {
-    title: "Enterprise", monthlyPrice: 29, buttonText: "Apply process",
+    title: "Enterprise", monthlyPrice: "100% Rev", buttonText: "View Network",
     popular: false, inverse: false,
-    features: ["Full Validator Node provisioning", "100% MEV capture capabilities", "Direct L1 orderbook access", "Custom bespoke yield strategies", "Dedicated protocol integration team", "Hardware wallet multisig setup"],
+    features: ["10,000 TPS Network Capacity", "Full Sequencer Revenue Capture", "No external L1 gas leakage", "Custom Native Token ($NEURAL)", "Yield compounds back to agents"],
   },
 ];
 
@@ -44,9 +44,10 @@ export const Pricing = () => {
             transition={{ duration: 0.8, ease: EASE }}
             viewport={{ once: true, margin: "-60px" }}
           >
-            <h2 className="section-title">Infrastructure Pricing</h2>
+            <h2 className="section-title">Network Unit Economics</h2>
             <p className="section-description mt-5">
-              Secure institutional yields, automate strategies, and scale seamlessly with tiered appchain capacity.
+              NEURALIS keeps 100% of sequencer revenue. We eliminate gas friction for humans
+              while extracting value from agent-driven arbitrage.
             </p>
           </motion.div>
 
@@ -99,9 +100,9 @@ export const Pricing = () => {
                     transition={{ duration: 0.5, ease: EASE, delay: index * 0.15 + 0.3 }}
                     viewport={{ once: true }}
                   >
-                    ${monthlyPrice}
+                    {monthlyPrice === "0" ? "$0" : monthlyPrice}
                   </motion.span>
-                  <span className="tracking-tight font-bold" style={{ color: inverse ? "rgba(0,0,0,0.5)" : "rgba(255,255,255,0.4)" }}>/month</span>
+                  {monthlyPrice === "0" && <span className="tracking-tight font-bold" style={{ color: inverse ? "rgba(0,0,0,0.5)" : "rgba(255,255,255,0.4)" }}>/tx</span>}
                 </div>
                 <button
                   className="w-full mt-[30px] py-2.5 rounded-xl font-semibold text-sm transition-all duration-200 hover:opacity-90"

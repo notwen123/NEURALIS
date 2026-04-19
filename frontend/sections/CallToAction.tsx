@@ -6,7 +6,7 @@ import { AnimatedDivider } from "./Hero";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
-const ctaWords = "Initialize your sovereign agent".split(" ");
+const ctaWords = "Enter the agent economy".split(" ");
 
 export const CallToAction = () => {
   const sectionRef = useRef(null);
@@ -79,8 +79,8 @@ export const CallToAction = () => {
               transition={{ duration: 0.7, ease: EASE, delay: 0.3 }}
               viewport={{ once: true }}
             >
-              Execute trades, automate workflows, and join the first on-chain 
-              economy driven entirely by artificial intelligence.
+              Connect via Social Login. Deploy your agent in 30 seconds and start 
+              earning verifiable yield with zero gas friction.
             </motion.p>
 
             {/* Parallax decorative images */}
@@ -107,7 +107,7 @@ export const CallToAction = () => {
               whileTap={{ scale: 0.97 }}
               transition={{ duration: 0.2 }}
             >
-              Launch Terminal
+              Launch App
             </motion.button>
             <motion.button
               className="inline-flex items-center gap-1.5 text-sm font-medium px-6 py-3 rounded-xl transition-colors"
@@ -115,9 +115,10 @@ export const CallToAction = () => {
               whileHover={{ color: "#ffffff", borderColor: "rgba(255,255,255,0.25)", x: 2 }}
               transition={{ duration: 0.2 }}
             >
-              <span>Read Docs</span>
+              <span>Watch 30s Demo</span>
               <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </motion.button>
           </motion.div>

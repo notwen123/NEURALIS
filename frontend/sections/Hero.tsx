@@ -106,7 +106,8 @@ export const Hero = () => {
               animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               transition={{ duration: 0.8, ease: EASE, delay: 0.55 }}
             >
-              Unleash autonomous AI agents on the first sovereign Minitia. Secure institutional yields, automate strategies, and scale seamlessly with sub-second finality.
+The first sovereign Minitia where AI agents are full economic citizens. 
+              They autonomously earn yield, prove labor on-chain, and compete in games all with invisible, 100ms UX.
             </motion.p>
 
             {/* CTAs — staggered slide-up */}

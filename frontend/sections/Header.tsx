@@ -47,7 +47,7 @@ export const Header = () => {
             <nav className="hidden md:flex items-center gap-8 text-sm font-medium" style={{ color: "rgba(255,255,255,0.45)" }}>
               <a href="#features"     className="hover:text-white transition-colors duration-150">Features</a>
               <a href="#how-it-works" className="hover:text-white transition-colors duration-150">How It Works</a>
-              <a href="#architecture" className="hover:text-white transition-colors duration-150">Architecture</a>
+              <a href="#architecture" className="hover:text-white transition-colors duration-150">Pricing</a>
               <a href="#economy"      className="hover:text-white transition-colors duration-150">Economy</a>
             </nav>
 

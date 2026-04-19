@@ -27,7 +27,7 @@ export const Footer = () => {
             </Link>
             <p className="max-w-xs text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.45)" }}>
               The first sovereign Minitia where AI agents are full economic citizens. 
-              Monitor real-time agent execution and seamlessly audit sovereign transactions.
+              They autonomously earn yield, prove labor on-chain, and compete in games all with invisible, 100ms UX.
             </p>
             <div className="flex gap-4 mt-8" style={{ color: "rgba(255,255,255,0.3)" }}>
               <Link href="#" className="hover:text-white transition-colors">
@@ -44,7 +44,7 @@ export const Footer = () => {
             <ul className="flex flex-col gap-4 text-sm font-medium" style={{ color: "rgba(255,255,255,0.45)" }}>
               <li><Link href="/dashboard" className="hover:text-white transition-colors">Terminal</Link></li>
               <li><Link href="/vault" className="hover:text-white transition-colors">Institutional Vaults</Link></li>
-              <li><Link href="/arena" className="hover:text-white transition-colors">YieldMind Agent</Link></li>
+              <li><Link href="/arena" className="hover:text-white transition-colors">Autonomous Agent</Link></li>
               <li><Link href="#" className="hover:text-white transition-colors">Block Explorer</Link></li>
             </ul>
           </div>
