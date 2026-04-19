@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 
 export const Header = () => {
@@ -24,12 +25,23 @@ export const Header = () => {
           <div className="flex items-center justify-between h-16">
 
             {/* Logo */}
-            <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-lg flex items-center justify-center text-white font-bold text-sm select-none" style={{ background: "linear-gradient(135deg, #2563eb, #1d4ed8)" }}>
-                ⬡
+            <Link href="/" className="flex items-center gap-2.5 group cursor-pointer relative">
+              <div className="w-8 h-8 flex items-center justify-center relative">
+                {/* Crystal Glow Backdrop */}
+                <div className="absolute inset-0 bg-[#2563eb] blur-xl opacity-0 group-hover:opacity-70 transition-opacity duration-700 rounded-full scale-150" />
+                
+                <Image 
+                  src="/landing/logo.png" 
+                  alt="NEURALIS Logo" 
+                  width={32} 
+                  height={32} 
+                  className="w-full h-full object-contain relative z-10 transition-all duration-500 filter drop-shadow-[0_0_0_rgba(37,99,235,0)] group-hover:drop-shadow-[0_0_12px_rgba(37,99,235,0.8)]" 
+                />
               </div>
-              <span className="font-bold text-base tracking-tight text-white">NEURALIS</span>
-            </div>
+              <span className="font-bold text-base tracking-tight text-white transition-colors duration-500 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-blue-200">
+                NEURALIS
+              </span>
+            </Link>
 
             {/* Desktop nav */}
             <nav className="hidden md:flex items-center gap-8 text-sm font-medium" style={{ color: "rgba(255,255,255,0.45)" }}>

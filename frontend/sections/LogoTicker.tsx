@@ -15,7 +15,7 @@ export const LogoTicker = () => {
     >
       {/* Label */}
       <p className="text-center text-xs font-semibold uppercase tracking-[0.2em] mb-8" style={{ color: "rgba(255,255,255,0.2)" }}>
-        Trusted by teams at
+        Trusted Ecosystem
       </p>
 
       {/* Ticker */}

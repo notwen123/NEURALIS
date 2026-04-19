@@ -8,15 +8,15 @@ import { AnimatedDivider } from "./Hero";
 const EASE = [0.22, 1, 0.36, 1] as const;
 
 const testimonials = [
-  { text: "As a seasoned designer always on the lookout for innovative tools, Framer.com instantly grabbed my attention.", imageSrc: "/landing/avatar-1.png", name: "Jamie Rivera", username: "@jamietechguru00" },
-  { text: "Our team's productivity has skyrocketed since we started using this tool.", imageSrc: "/landing/avatar-2.png", name: "Josh Smith", username: "@jjsmith" },
-  { text: "This app has completely transformed how I manage my projects and deadlines.", imageSrc: "/landing/avatar-3.png", name: "Morgan Lee", username: "@morganleewhiz" },
-  { text: "I was amazed at how quickly we were able to integrate this app into our workflow.", imageSrc: "/landing/avatar-4.png", name: "Casey Jordan", username: "@caseyj" },
-  { text: "Planning and executing events has never been easier. This app helps me keep track of all the moving parts, ensuring nothing slips through the cracks.", imageSrc: "/landing/avatar-5.png", name: "Taylor Kim", username: "@taylorkimm" },
-  { text: "The customizability and integration capabilities of this app are top-notch.", imageSrc: "/landing/avatar-6.png", name: "Riley Smith", username: "@rileysmith1" },
-  { text: "Adopting this app for our team has streamlined our project management and improved communication across the board.", imageSrc: "/landing/avatar-7.png", name: "Jordan Patels", username: "@jpatelsdesign" },
-  { text: "With this app, we can easily assign tasks, track progress, and manage documents all in one place.", imageSrc: "/landing/avatar-8.png", name: "Sam Dawson", username: "@dawsontechtips" },
-  { text: "Its user-friendly interface and robust features support our diverse needs.", imageSrc: "/landing/avatar-9.png", name: "Casey Harper", username: "@casey09" },
+  { text: "As a seasoned designer always on the lookout for innovative tools, Framer.com instantly grabbed my attention.", imageSrc: "/landing/avatar-1.png", name: "Cool Dude", username: "@coolDude" },
+  { text: "Our team's productivity has skyrocketed since we started using this tool.", imageSrc: "/landing/avatar-2.png", name: "Hermione Granger", username: "@hermione" },
+  { text: "This app has completely transformed how I manage my projects and deadlines.", imageSrc: "/landing/avatar-3.png", name: "Jasmine", username: "@jasmine" },
+  { text: "I was amazed at how quickly we were able to integrate this app into our workflow.", imageSrc: "/landing/avatar-4.png", name: "Carl Norwin", username: "@carlnorwin" },
+  { text: "Planning and executing events has never been easier. This app helps me keep track of all the moving parts, ensuring nothing slips through the cracks.", imageSrc: "/landing/avatar-5.png", name: "Bunny", username: "@bunny" },
+  { text: "The customizability and integration capabilities of this app are top-notch.", imageSrc: "/landing/avatar-6.png", name: "Billionaire Obo", username: "@billionaire" },
+  { text: "Adopting this app for our team has streamlined our project management and improved communication across the board.", imageSrc: "/landing/avatar-7.png", name: "Tom", username: "@tom" },
+  { text: "With this app, we can easily assign tasks, track progress, and manage documents all in one place.", imageSrc: "/landing/avatar-8.png", name: "21th Century Hacker", username: "@21thCentury" },
+  { text: "Its user-friendly interface and robust features support our diverse needs.", imageSrc: "/landing/avatar-9.png", name: "Sinchan", username: "@sinchan" },
 ];
 
 const firstColumn  = testimonials.slice(0, 3);

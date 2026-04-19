@@ -45,11 +45,16 @@ export const CallToAction = () => {
                 <span key={i}>
                   <motion.span
                     className="inline-block"
-                  initial={{ opacity: 0, y: 40, filter: "blur(4px)" }}
-                  whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                  transition={{ duration: 0.7, ease: EASE, delay: i * 0.1 }}
-                  viewport={{ once: true, margin: "-40px" }}
-                >
+                    initial={{ opacity: 0, y: 40, filter: "blur(4px)" }}
+                    whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                    transition={{ duration: 0.7, ease: EASE, delay: i * 0.1 }}
+                    viewport={{ once: true, margin: "-40px" }}
+                    style={{
+                      background: "linear-gradient(180deg, #ffffff 40%, rgba(255,255,255,0.45) 100%)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                    }}
+                  >
                   {word}
                   </motion.span>
                   {i !== ctaWords.length - 1 && " "}
