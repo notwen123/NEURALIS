@@ -1,0 +1,52 @@
+# Environment variables — NEVER commit real .env files
+.env
+.env.local
+.env.*.local
+contracts/.env
+agent/.env
+frontend/.env.local
+
+# Local dev tooling
+.claude/
+PLAN.md
+IMPLEMENTATION_PLAN.md
+.initia
+# Node
+node_modules/
+agent/node_modules/
+frontend/node_modules/
+
+# Next.js build output
+frontend/.next/
+frontend/out/
+
+# Foundry build artifacts
+contracts/out/
+contracts/cache/
+
+# Foundry dependencies (reinstallable via forge install)
+contracts/lib/
+
+# Test artifacts
+frontend/test-results/
+frontend/playwright-report/
+frontend/tsconfig.tsbuildinfo
+coverage/
+
+# Logs
+*.log
+/tmp/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Minitia node data — contains PRIVATE KEYS & MNEMONICS, never commit
+chain_keys/
+.minitia/
+.opinit/
+.relayer/
+.weave/
+
+# Deployment addresses (may contain chain-specific info — commit intentionally)
+# deployments.json  ← intentionally NOT ignored, useful to track
