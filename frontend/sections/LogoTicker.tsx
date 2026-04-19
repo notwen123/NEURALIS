@@ -35,6 +35,7 @@ export const LogoTicker = () => {
                 "logo-move",
                 "logo-gemini",
                 "logo-vercel",
+                "logo-solidity",
                 "logo-claude",
                 "logo-github",
               ].map((logo) => (
