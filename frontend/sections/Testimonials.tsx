@@ -15,15 +15,15 @@ interface Testimonial {
 }
 
 const testimonials: Testimonial[] = [
-  { text: "As a seasoned designer always on the lookout for innovative tools, Framer.com instantly grabbed my attention.", imageSrc: "/landing/avatar-1.png", name: "Cool Dude", username: "@coolDude" },
-  { text: "Our team's productivity has skyrocketed since we started using this tool.", imageSrc: "/landing/avatar-2.png", name: "Hermione Granger", username: "@hermione" },
-  { text: "This app has completely transformed how I manage my projects and deadlines.", imageSrc: "/landing/avatar-3.png", name: "Jasmine", username: "@jasmine" },
-  { text: "I was amazed at how quickly we were able to integrate this app into our workflow.", imageSrc: "/landing/avatar-4.png", name: "Carl Norwin", username: "@carlnorwin" },
-  { text: "Planning and executing events has never been easier. This app helps me keep track of all the moving parts, ensuring nothing slips through the cracks.", imageSrc: "/landing/avatar-5.png", name: "Bunny", username: "@bunny" },
-  { text: "The customizability and integration capabilities of this app are top-notch.", imageSrc: "/landing/avatar-6.png", name: "Billionaire Obo", username: "@billionaire" },
-  { text: "Adopting this app for our team has streamlined our project management and improved communication across the board.", imageSrc: "/landing/avatar-7.png", name: "Tom", username: "@tom" },
-  { text: "With this app, we can easily assign tasks, track progress, and manage documents all in one place.", imageSrc: "/landing/avatar-8.png", name: "21th Century Hacker", username: "@21thCentury" },
-  { text: "Its user-friendly interface and robust features support our diverse needs.", imageSrc: "/landing/avatar-9.png", name: "Sinchan", username: "@sinchan" },
+  { text: "Finally a crypto app where I don't have to click 'Approve Transaction' fifty times. The 24-hour auto-signing session is a massive relief.", imageSrc: "/landing/avatar-1.png", name: "Cool Dude", username: "@coolDude" },
+  { text: "I just deposited my USDC via Google login and went to sleep. Woke up to find my agent captured a 12% yield spike across 3 networks automatically.", imageSrc: "/landing/avatar-2.png", name: "Hermione Granger", username: "@hermione" },
+  { text: "The 100ms block times make this feel exactly like a native Web2 app. No waiting, no failed transactions, just instant execution.", imageSrc: "/landing/avatar-3.png", name: "Jasmine", username: "@jasmine" },
+  { text: "Earning real sequencer revenue from the agent's work is brilliant. It's the first time I've felt like the protocol is actually working for me.", imageSrc: "/landing/avatar-4.png", name: "Carl Norwin", username: "@carlnorwin" },
+  { text: "I teleported liquidity across the Initia ecosystem and didn't even notice the bridge. The agent handles all the complex routing in the background.", imageSrc: "/landing/avatar-5.png", name: "Bunny", username: "@bunny" },
+  { text: "Earning Neural credits and using them to battle in the Agent Arena is insanely fun. It perfectly bridges DeFi yields with actual gameplay.", imageSrc: "/landing/avatar-6.png", name: "Billionaire Obo", username: "@billionaire" },
+  { text: "It's refreshing not having to worry about seed phrases. The social login makes onboarding my non-crypto friends actually possible.", imageSrc: "/landing/avatar-7.png", name: "Tom", username: "@tom" },
+  { text: "The Labor Badges give my agent true on-chain rep. Seeing verifiable proof of the trades it executed while I was offline is incredible.", imageSrc: "/landing/avatar-8.png", name: "21th Century Hacker", username: "@21thCentury" },
+  { text: "Zero gas fees for end users changes everything. It feels like magic to just speak my intent and watch the agent deploy my capital.", imageSrc: "/landing/avatar-9.png", name: "Sinchan", username: "@sinchan" },
 ];
 
 const firstColumn  = testimonials.slice(0, 3);
