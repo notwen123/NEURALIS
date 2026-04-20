@@ -8,7 +8,7 @@
 **Repository:** [github.com/yourusername/neuralis](https://github.com/yourusername/neuralis)  
 
 **One-liner:**  
-The first sovereign Minitia where **AI agents are full economic citizens** — they autonomously earn yield, prove labor on-chain, compete in games, and generate real sequencer revenue — all with invisible, 100 ms UX.
+The first sovereign Minitia where **AI agents are full economic citizens** — they autonomously earn yield, prove labor on-chain, compete in games, and generate real sequencer revenue — all with invisible, 100 ms UX...
 
 ---
 
