@@ -7,7 +7,7 @@ import {
   useWaitForTransactionReceipt,
   useChainId
 } from 'wagmi';
-import { parseUnits, formatUnits } from 'viem';
+import { formatUnits } from 'viem';
 import { 
   VAULT_MANAGER_ABI, 
   ERC20_ABI, 
@@ -51,13 +51,12 @@ export function useVault() {
   });
 
   // 2. Write Operations
-  const { writeContractAsync: writeDeposit } = useWriteContract();
-  const { writeContractAsync: writeRedeem } = useWriteContract();
-  const { writeContractAsync: writeApprove } = useWriteContract();
+  const { writeContractAsync: writeDeposit, isPending: isDepositing } = useWriteContract();
+  const { writeContractAsync: writeRedeem, isPending: isRedeeming } = useWriteContract();
+  const { writeContractAsync: writeApprove, isPending: isApproving } = useWriteContract();
 
-  async function deposit(usdcAmount: string) {
+  async function deposit(assets: bigint) {
     if (!address) throw new Error('Wallet not connected');
-    const assets = parseUnits(usdcAmount, USDC_DECIMALS);
     return writeDeposit({
       ...vaultManagerConfig,
       functionName: 'deposit',
@@ -65,9 +64,8 @@ export function useVault() {
     });
   }
 
-  async function redeem(shareAmount: string) {
+  async function redeem(shares: bigint) {
     if (!address) throw new Error('Wallet not connected');
-    const shares = parseUnits(shareAmount, 18); // Shares usually 18 decimals
     return writeRedeem({
       ...vaultManagerConfig,
       functionName: 'redeem',
@@ -75,8 +73,7 @@ export function useVault() {
     });
   }
 
-  async function approve(usdcAmount: string) {
-    const assets = parseUnits(usdcAmount, USDC_DECIMALS);
+  async function approve(assets: bigint) {
     return writeApprove({
       address: assetAddress,
       abi: ERC20_ABI,
@@ -98,16 +95,19 @@ export function useVault() {
     totalAssetsFormatted: (!isWrongNetwork && totalAssets.data !== undefined) 
       ? formatUnits(totalAssets.data, USDC_DECIMALS) 
       : '0.00',
-    totalSupply: isWrongNetwork ? BigInt(0) : (totalSupply.data ?? BigInt(0)),
+    totalSupplyValue: isWrongNetwork ? BigInt(0) : (totalSupply.data ?? BigInt(0)),
     userSharesRaw: isWrongNetwork ? BigInt(0) : (userShares.data ?? BigInt(0)),
-    userSharesFormatted: (!isWrongNetwork && userShares.data !== undefined)
-      ? formatUnits(userShares.data, 18)
+    userAssetsFormatted: (!isWrongNetwork && userShares.data !== undefined)
+      ? formatUnits(userShares.data, 18) // Vault shares are 18 decimals
       : '0.00',
     deposit,
     redeem,
     approve,
     refetch,
     isLoading: totalAssets.isLoading || userShares.isLoading,
+    isDepositing,
+    isRedeeming,
+    isApproving,
     assetAddress,
     isWrongNetwork
   };

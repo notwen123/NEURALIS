@@ -168,7 +168,12 @@ export const NEXT_PUBLIC_VAULT_MANAGER_ADDRESS =
   (process.env.NEXT_PUBLIC_VAULT_MANAGER_ADDRESS as Address | undefined) ??
   '0x0000000000000000000000000000000000000000';
 
+export const NEXT_PUBLIC_USDC_ADDRESS =
+  (process.env.NEXT_PUBLIC_USDC_ADDRESS as Address | undefined) ??
+  '0x0000000000000000000000000000000000000000';
+
 export const CHAIN_ID = Number(process.env.NEXT_PUBLIC_CHAIN_ID ?? 0);
+
 
 // ─── wagmi config objects ─────────────────────────────────────────────────────
 

@@ -9,7 +9,9 @@ import {
   useChainId,
   useSwitchChain
 } from 'wagmi';
+import { useInterwovenKit } from '@initia/interwovenkit-react';
 import { parseUnits } from 'viem';
+
 import { toast } from 'sonner';
 import { 
   NEXT_PUBLIC_VAULT_MANAGER_ADDRESS, 
@@ -24,6 +26,7 @@ const USDC_ADDRESS = NEXT_PUBLIC_USDC_ADDRESS as `0x${string}`;
 
 export function VaultInteraction() {
   const { isConnected, address } = useAccount();
+  const { openDeposit } = useInterwovenKit();
   const chainId = useChainId();
   const { switchChain } = useSwitchChain();
   const [amount, setAmount] = useState('');
@@ -135,7 +138,13 @@ export function VaultInteraction() {
             MAX
           </button>
         </div>
-        <div className="flex justify-end pt-1">
+        <div className="flex justify-end pt-1 gap-4">
+           <button 
+             onClick={() => openDeposit({ denoms: ['uinit'], chainId: 'evm-1' })} 
+             className="text-[9px] font-black text-brand uppercase tracking-widest hover:brightness-125 transition-all border border-brand/20 px-2 py-0.5 rounded"
+           >
+             ⚡ Sectorize L1 Gas
+           </button>
            <button 
              onClick={() => window.open('https://faucet.testnet.initia.xyz', '_blank')} 
              className="text-[9px] font-black text-blue-400 uppercase tracking-widest hover:brightness-125 transition-all"
@@ -143,6 +152,7 @@ export function VaultInteraction() {
              + Request Liquidity
            </button>
         </div>
+
       </div>
 
       {isWrongNetwork ? (
