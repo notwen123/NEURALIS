@@ -101,6 +101,30 @@ export const VAULT_MANAGER_ABI = [
   },
 ] as const;
 
+export const STRATEGY_ABI = [
+  {
+    name: 'getAPY',
+    type: 'function',
+    stateMutability: 'view',
+    inputs: [],
+    outputs: [{ type: 'uint256' }],
+  },
+  {
+    name: 'getTVL',
+    type: 'function',
+    stateMutability: 'view',
+    inputs: [],
+    outputs: [{ type: 'uint256' }],
+  },
+  {
+    name: 'getRiskScore',
+    type: 'function',
+    stateMutability: 'view',
+    inputs: [],
+    outputs: [{ type: 'uint8' }],
+  },
+] as const;
+
 export const ERC20_ABI = [
   {
     name: 'approve',
@@ -140,7 +164,7 @@ export const ERC20_ABI = [
 
 // ─── Addresses ────────────────────────────────────────────────────────────────
 
-export const VAULT_MANAGER_ADDRESS =
+export const NEXT_PUBLIC_VAULT_MANAGER_ADDRESS =
   (process.env.NEXT_PUBLIC_VAULT_MANAGER_ADDRESS as Address | undefined) ??
   '0x0000000000000000000000000000000000000000';
 
@@ -149,6 +173,15 @@ export const CHAIN_ID = Number(process.env.NEXT_PUBLIC_CHAIN_ID ?? 0);
 // ─── wagmi config objects ─────────────────────────────────────────────────────
 
 export const vaultManagerConfig = {
-  address: VAULT_MANAGER_ADDRESS,
-  abi:     VAULT_MANAGER_ABI,
+  address: NEXT_PUBLIC_VAULT_MANAGER_ADDRESS,
+  abi: VAULT_MANAGER_ABI,
 } as const;
+
+// ─── Utilities ───────────────────────────────────────────────────────────────
+
+/**
+ * Generates a direct link to the InitiaScan EVM-1 explorer for a given transaction hash.
+ */
+export const getExplorerLink = (hash: string) => {
+  return `https://scan.testnet.initia.xyz/evm-1/evm-txs/${hash}`;
+};

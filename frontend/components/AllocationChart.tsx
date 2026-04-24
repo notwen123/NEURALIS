@@ -11,10 +11,10 @@ type Slice = {
 };
 
 export function AllocationChart({ data }: { data: Slice[] }) {
-  if (!data.length) {
+  if (!data || data.length === 0) {
     return (
-      <div className="flex items-center justify-center h-64 text-gray-500">
-        No active strategies
+      <div className="flex items-center justify-center h-64 text-white/10 uppercase font-mono text-[10px] tracking-widest">
+        SYSTEM_DATA_PENDING...
       </div>
     );
   }

@@ -14,6 +14,8 @@ import {
 } from '@initia/interwovenkit-react';
 import InterwovenKitStyles from '@initia/interwovenkit-react/styles.js';
 import '@initia/interwovenkit-react/styles.css';
+import { GlobalNetworkGuard } from '@/components/GlobalNetworkGuard';
+
 
 const chainId = process.env.NEXT_PUBLIC_INTERWOVEN_CHAIN_ID ?? 'initiation-2';
 const bridgeDenom = process.env.NEXT_PUBLIC_INTERWOVEN_BRIDGE_DENOM ?? 'uinit';
@@ -24,10 +26,11 @@ const customChain = {
   network_type: 'testnet',
   bech32_prefix: 'init',
   apis: {
-    rpc: [{ address: process.env.NEXT_PUBLIC_INTERWOVEN_RPC_URL ?? 'http://localhost:26657' }],
-    rest: [{ address: process.env.NEXT_PUBLIC_INTERWOVEN_REST_URL ?? 'http://localhost:1317' }],
-    indexer: [{ address: process.env.NEXT_PUBLIC_INTERWOVEN_INDEXER_URL ?? 'http://localhost:8080' }],
-    'json-rpc': [{ address: process.env.NEXT_PUBLIC_RPC_URL ?? 'http://localhost:8545' }],
+    rpc: [{ address: process.env.NEXT_PUBLIC_INTERWOVEN_RPC_URL ?? 'https://rpc.testnet.initia.xyz' }],
+    rest: [{ address: process.env.NEXT_PUBLIC_INTERWOVEN_REST_URL ?? 'https://rest.testnet.initia.xyz' }],
+    indexer: [{ address: process.env.NEXT_PUBLIC_INTERWOVEN_INDEXER_URL ?? 'https://indexer.testnet.initia.xyz' }],
+    'json-rpc': [{ address: process.env.NEXT_PUBLIC_RPC_URL ?? 'https://jsonrpc-evm-1.anvil.asia-southeast.initia.xyz' }],
+
   },
   fees: {
     fee_tokens: [{
@@ -58,7 +61,9 @@ export function Providers({ children }: { children: React.ReactNode }) {
           defaultChainId="initiation-2"
           customChain={chainId !== 'initiation-2' ? (customChain as any) : undefined}
         >
-          {children}
+          <GlobalNetworkGuard>
+            {children}
+          </GlobalNetworkGuard>
         </InterwovenKitProvider>
       </QueryClientProvider>
     </WagmiProvider>
